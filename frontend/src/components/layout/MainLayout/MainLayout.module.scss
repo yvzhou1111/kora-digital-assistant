@@ -1,0 +1,28 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding-top: 64px; // Header height
+}
+
+.contentInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-md;
+  width: 100%;
+  
+  @include responsive(md) {
+    padding: $spacing-lg $spacing-md;
+  }
+  
+  @include responsive(sm) {
+    padding: $spacing-md;
+  }
+} 

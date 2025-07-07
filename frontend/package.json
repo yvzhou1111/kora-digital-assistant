@@ -1,0 +1,39 @@
+{
+  "name": "digital-twin-frontend",
+  "version": "1.0.0",
+  "description": "数字协同人网页前端",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "digital-twin",
+    "ai",
+    "next.js",
+    "react"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tanstack/react-query": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "antd": "^5.0.0",
+    "axios": "^1.0.0",
+    "d3": "^7.0.0",
+    "echarts": "^5.0.0",
+    "formik": "^2.0.0",
+    "i18next": "^23.0.0",
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-i18next": "^13.0.0",
+    "sass": "^1.0.0",
+    "socket.io-client": "^4.0.0",
+    "typescript": "^5.0.0",
+    "yup": "^1.0.0"
+  }
+}

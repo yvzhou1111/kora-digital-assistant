@@ -1,0 +1,56 @@
+# Web框架与API
+fastapi>=0.104.0
+uvicorn>=0.27.0
+pydantic>=2.0.0
+python-multipart>=0.0.6
+email-validator>=2.0.0
+python-jose>=3.3.0
+passlib>=1.7.4
+bcrypt>=4.0.1
+
+# 数据库相关
+sqlalchemy>=2.0.0
+alembic>=1.12.0
+psycopg2-binary>=2.9.5
+redis>=4.3.4
+
+# AI 与机器学习
+numpy>=1.24.0
+scikit-learn>=1.2.0
+sentence-transformers>=2.2.2
+torch>=2.0.0
+transformers>=4.30.0
+openai>=1.0.0
+tiktoken>=0.3.0
+chromadb>=0.4.18
+
+# 工具和辅助库
+python-dotenv>=1.0.0
+pydantic-settings>=2.0.0
+loguru>=0.7.0
+requests>=2.31.0
+tenacity>=8.2.0
+aiohttp>=3.8.0
+httpx>=0.24.0
+flask>=2.2.0
+pytest>=7.3.1
+nltk>=3.8.1
+langchain>=0.0.267
+pypdf>=3.15.1
+markdown>=3.4.4
+markdownify>=0.11.6
+
+# Second-Me 集成
+dataclasses-json>=0.5.7
+backoff>=2.2.1
+fastmcp>=0.1.0
+graphrag>=1.2.1
+tqdm>=4.65.0
+pandas>=2.0.0
+matplotlib>=3.7.1
+plotly>=5.14.1
+scipy>=1.10.1
+Werkzeug>=2.3.6
+itsdangerous>=2.1.2
+jinja2>=3.1.2
+click>=8.1.3 

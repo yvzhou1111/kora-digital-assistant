@@ -1,0 +1,143 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.dashboardLayout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex: 1;
+  margin-top: 64px; // Header height
+}
+
+.sider {
+  background-color: $dark-color;
+  box-shadow: $shadow-sm;
+  position: fixed;
+  height: calc(100vh - 64px);
+  left: 0;
+  overflow: auto;
+  z-index: $z-index-fixed - 1;
+}
+
+.userInfo {
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+  margin-bottom: $spacing-sm;
+}
+
+.userDetails {
+  text-align: center;
+}
+
+.userName {
+  color: white;
+  margin-bottom: 0;
+}
+
+.userRole {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: $font-sm;
+}
+
+.collapseButton {
+  color: white;
+  position: absolute;
+  top: $spacing-md;
+  right: $spacing-xs;
+  font-size: $font-lg;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.siderMenu {
+  margin-top: $spacing-md;
+  
+  :global(.ant-menu-item) {
+    margin: 0;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    a {
+      color: rgba(255, 255, 255, 0.65);
+    }
+  }
+  
+  :global(.ant-menu-item-selected) {
+    background-color: $primary-color !important;
+    
+    a {
+      color: white;
+    }
+  }
+}
+
+.content {
+  margin-left: 240px;
+  transition: margin-left 0.2s;
+  
+  .sider.ant-layout-sider-collapsed + & {
+    margin-left: 80px;
+  }
+}
+
+.contentInner {
+  padding: $spacing-xl;
+  min-height: calc(100vh - 64px - 70px); // 100vh - header - footer
+  
+  @include responsive(md) {
+    padding: $spacing-lg;
+  }
+  
+  @include responsive(sm) {
+    padding: $spacing-md;
+  }
+}
+
+@include responsive(lg) {
+  .sider {
+    position: absolute;
+  }
+  
+  .content {
+    margin-left: 0;
+  }
+}
+
+@include responsive(md) {
+  .userInfo {
+    padding: $spacing-md;
+  }
+  
+  .sider {
+    position: fixed;
+    z-index: $z-index-modal;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    
+    &.ant-layout-sider-collapsed {
+      transform: translateX(0);
+      width: 0 !important;
+      min-width: 0 !important;
+      max-width: 0 !important;
+      overflow: hidden;
+    }
+  }
+  
+  .content {
+    margin-left: 0;
+  }
+} 

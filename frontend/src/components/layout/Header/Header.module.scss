@@ -1,0 +1,158 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: $dark-color;
+  padding: 0 $spacing-md;
+  height: 64px;
+  position: fixed;
+  width: 100%;
+  z-index: $z-index-fixed;
+  box-shadow: $shadow-sm;
+}
+
+.logo {
+  height: 32px;
+  margin-right: $spacing-lg;
+  
+  .logoContent {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .logoText {
+    color: white;
+    font-size: $font-lg;
+    font-weight: 600;
+  }
+}
+
+.desktopMenu {
+  flex: 1;
+  background-color: transparent;
+  border-bottom: none;
+  line-height: 64px;
+  
+  :global(.ant-menu-item) {
+    padding: 0 $spacing-md;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+.rightMenu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.iconButton {
+  color: white;
+  font-size: $font-lg;
+  padding: $spacing-xs;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 $spacing-xs;
+  margin-left: $spacing-sm;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: $border-radius-sm;
+  }
+}
+
+.avatar {
+  margin-right: $spacing-xs;
+}
+
+.username {
+  color: white;
+  margin-left: $spacing-xs;
+}
+
+.authButtons {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.loginButton {
+  color: white;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.registerButton {
+  margin-left: $spacing-xs;
+}
+
+.notificationBadge,
+.messageBadge {
+  margin-right: $spacing-md;
+}
+
+.mobileMenuButton {
+  display: none;
+  margin-left: auto;
+}
+
+.menuButton {
+  color: white;
+  font-size: $font-lg;
+}
+
+// Responsive styles
+@include responsive(md) {
+  .desktopMenu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background-color: $dark-color;
+    box-shadow: $shadow-md;
+    z-index: $z-index-dropdown;
+    
+    &.mobileMenuVisible {
+      display: block;
+    }
+    
+    :global(.ant-menu-item) {
+      line-height: 50px;
+      height: 50px;
+      margin: 0;
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+  
+  .mobileMenuButton {
+    display: block;
+  }
+  
+  .rightMenu {
+    margin-left: $spacing-md;
+  }
+  
+  .username {
+    display: none;
+  }
+} 
